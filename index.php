@@ -80,7 +80,9 @@
                 </p>
             </div>
         </div>
-    <? endwhile; else : ?>
+    <? endwhile; ?>
+    <? girlworld_pagination(); ?>
+    <? else: ?>
         <p><? esc_html_e( 'Sorry, no posts matched your criteria.' ); ?></p>
     <? endif; ?>
 </section>

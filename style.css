@@ -240,6 +240,38 @@ nav .menu-header-nav-container .menu li a:hover{
 #sec-3 .post .post-right .tags a:hover{
     text-decoration: underline;
 }
+/* pagination */
+#sec-3 .post-pagination ul{
+    padding: 0;
+    list-style: none;
+}
+#sec-3 .post-pagination ul li{
+    margin-right: 8px;
+    padding: 3px;
+    display: inline-block;
+    border: 0.5px solid #333;
+    border-radius: 2px;
+    text-align: center;
+}
+#sec-3 .post-pagination ul li a{
+    text-decoration: none;
+    color: #333;
+}
+#sec-3 .post-pagination ul .active{
+    background-color: #333; 
+}
+#sec-3 .post-pagination ul .active span{
+    color: #fff;
+}
+#sec-3 .post-pagination ul li a,
+#sec-3 .post-pagination ul .active span{
+    padding: 6px 10px;    
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+}
+
 
 /* FOOTER */
 #footer #footer-logo{
