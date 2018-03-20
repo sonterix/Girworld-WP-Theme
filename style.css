@@ -272,6 +272,14 @@ nav .menu-header-nav-container .menu li a:hover{
 #footer #footer-logo #footer-text p span{
     font-weight: 300;
 }
+#footer #footer-logo #footer-text .footer-logo-img{
+    margin: 0 auto;
+    width: 100px;
+}
+#footer #footer-logo #footer-text .footer-logo-img a img{
+    width: 100%;
+    height: auto;
+}
 
 /* IMG */
 #pic-2 p,
