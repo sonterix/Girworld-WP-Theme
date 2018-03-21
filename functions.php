@@ -4,6 +4,8 @@
 add_action('wp_enqueue_scripts', 'girlworld_style_scripts');
 // add action for theme settings
 add_action('after_setup_theme', 'girlworld_setup');
+// add customizer settings
+add_action('customize_register', 'girlworld_customize_register');
 
 function girlworld_setup(){
     // texdomain
@@ -43,6 +45,106 @@ function girlworld_style_scripts() {
 	wp_enqueue_script('jquery-script', get_template_directory_uri() . '/js/jquery.min.js');
 	wp_enqueue_script('wow-script', get_template_directory_uri() . '/js/wow.min.js');
 	wp_enqueue_script('main-script', get_template_directory_uri() . '/js/main.js');
+}
+
+// customizer
+function girlworld_customize_register($wp_customize) {
+    $wp_customize->add_section('footer_section' , [
+        'title' => __( 'Footer Settings', 'girlworld' ),
+        'priority' => 30,
+    ]);
+
+    $wp_customize->add_setting('social_facebook', [
+        'default' => __('https://www.facebook.com/'),
+        'transport' => 'refresh',
+    ]);
+    $wp_customize->add_setting('social_twitter', [
+        'default' => __('https://twitter.com/'),
+        'transport' => 'refresh',
+    ]);
+    $wp_customize->add_setting('social_google_plus', [
+        'default' => __('https://plus.google.com/'),
+        'transport' => 'refresh',
+    ]);
+    $wp_customize->add_setting('social_linkedin', [
+        'default' => __('https://www.linkedin.com/'),
+        'transport' => 'refresh',
+    ]);
+    $wp_customize->add_setting('social_youtube', [
+        'default' => __('https://www.youtube.com/'),
+        'transport' => 'refresh',
+    ]);
+    $wp_customize->add_setting('social_twitch', [
+        'default' => __('https://www.twitch.tv/'),
+        'transport' => 'refresh',
+    ]);
+    $wp_customize->add_setting('social_snapchat', [
+        'default' => __('https://www.snapchat.com/'),
+        'transport' => 'refresh',
+    ]);
+    $wp_customize->add_setting('social_pinterest', [
+        'default' => __('https://www.pinterest.com/'),
+        'transport' => 'refresh',
+    ]);
+    $wp_customize->add_setting('footer_text_settings', [
+        'default' => __('NICK <span>X</span> 2017', 'girlworld'),
+        'transport' => 'refresh',
+    ]);
+
+    $wp_customize->add_control('facebook_url', [
+        'label' => __( 'Facebook URL', 'girlworld' ),
+        'section' => 'footer_section',
+        'settings' => 'social_facebook',
+        'type' => 'text',
+    ]);
+    $wp_customize->add_control('twitter_url', [
+        'label' => __( 'Twitter URL', 'girlworld' ),
+        'section' => 'footer_section',
+        'settings' => 'social_twitter',
+        'type' => 'text',
+    ]);
+    $wp_customize->add_control('google_plus_url', [
+        'label' => __( 'Google+ URL', 'girlworld' ),
+        'section' => 'footer_section',
+        'settings' => 'social_google_plus',
+        'type' => 'text',
+    ]);
+    $wp_customize->add_control('linkedin_url', [
+        'label' => __( 'Linkedin URL', 'girlworld' ),
+        'section' => 'footer_section',
+        'settings' => 'social_linkedin',
+        'type' => 'text',
+    ]);
+    $wp_customize->add_control('youtube_url', [
+        'label' => __( 'Youtube URL', 'girlworld' ),
+        'section' => 'footer_section',
+        'settings' => 'social_youtube',
+        'type' => 'text',
+    ]);
+    $wp_customize->add_control('twitch_url', [
+        'label' => __( 'Twitch URL', 'girlworld' ),
+        'section' => 'footer_section',
+        'settings' => 'social_twitch',
+        'type' => 'text',
+    ]);
+    $wp_customize->add_control('snapchat_url', [
+        'label' => __( 'Snapchat URL', 'girlworld' ),
+        'section' => 'footer_section',
+        'settings' => 'social_snapchat',
+        'type' => 'text',
+    ]);
+    $wp_customize->add_control('pinterest_url', [
+        'label' => __( 'Pinterest URL', 'girlworld' ),
+        'section' => 'footer_section',
+        'settings' => 'social_pinterest',
+        'type' => 'text',
+    ]);
+    $wp_customize->add_control('footer_text', [
+        'label' => __( 'Footer text', 'girlworld' ),
+        'section' => 'footer_section',
+        'settings' => 'footer_text_settings',
+        'type' => 'text',
+    ]);
 }
 
 // breadcrumbs

@@ -62,7 +62,6 @@ nav{
     display: grid;
     grid-template-columns: 1fr 10fr; 
     background-color: #333;
-    opacity: 0.9;   
 }
 nav .menu-header-nav-logo{
     padding: 1px;
@@ -275,8 +274,24 @@ nav .menu-header-nav-container .menu li a:hover{
 
 /* FOOTER */
 #footer #footer-logo{
+    display: grid;
+    grid-template-rows: auto auto;
     height: 400px;
     background-color: #1e1d1b;
+}
+#footer #footer-logo #footer-social{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+#footer #footer-logo #footer-social a{
+    color: #fff;
+    margin: 0 5px;
+    font-size: 42px;
+    transition: 0.2s ease-in-out;
+}
+#footer #footer-logo #footer-social a:hover{
+    color: #e7e7e7;
 }
 #footer #footer-logo #footer-text{
     display: flex;
@@ -284,7 +299,6 @@ nav .menu-header-nav-container .menu li a:hover{
     justify-content: flex-end;
     align-items: center;
     height: 100%;
-    opacity: 0.9;    
 }
 
 #footer #footer-logo #footer-text hr{
